@@ -27,7 +27,7 @@ beforeAll(async () => {
 
     it('should respond 409 and not create console if it already exists', async () => {
         const body = { name: "PS4"}
-        createConsole("PS4")
+        await createConsole("PS4")
         const consolesBefore = await countConsoles()
         const response = await server.post("/consoles").send(body)
         const consolesAfter = await countConsoles()
